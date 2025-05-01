@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Web Form</title>
+  <style>
+    /* Blue Gradient Page Background */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff); /* Blue gradient background */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Clean White Form Container */
+    .form-container {
+      background-color: #ffffff; /* Clean white background for form */
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 500px;
+      color: #333;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      background: #f9f9f9; /* Slightly gray background for inputs */
+      border-radius: 10px;
+      font-size: 15px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #0072ff; /* Focused border color */
+      outline: none;
+      box-shadow: 0 0 8px rgba(0, 114, 255, 0.6);
+      transform: scale(1.02);
+    }
+
+    textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    .gender-options {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .gender-options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 400;
+    }
+
+    .submit-button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      transform: scale(1.03);
+      box-shadow: 0 0 12px rgba(255, 75, 43, 0.5);
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 30px 20px;
+      }
+
+      .gender-options {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form class="form-container">
+    <h2>REGISTRATION FORM</h2>
+
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="John Doe" required />
+
+    <label for="contact">Contact Number</label>
+    <input type="tel" id="contact" name="contact" placeholder="123-456-7890" required />
+
+    <label for="address">Address</label>
+    <textarea id="address" name="address" placeholder="123 Main Street, City, Country" required></textarea>
+
+    <label for="company">Company Name</label>
+    <input type="text" id="company" name="company" placeholder="ABC Corp" />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="email@example.com" required />
+
+    <label for="department">Department</label>
+    <select id="department" name="department" required>
+      <option value="">Select</option>
+      <option value="hr">HR</option>
+      <option value="sales">Sales</option>
+      <option value="development">Development</option>
+      <option value="marketing">Marketing</option>
+      <option value="others">Others</option>
+    </select>
+
+    <label>Gender</label>
+    <div class="gender-options">
+      <label><input type="radio" name="gender" value="male" /> Male</label>
+      <label><input type="radio" name="gender" value="female" /> Female</label>
+      <label><input type="radio" name="gender" value="prefer-not" /> Prefer not to say</label>
+    </div>
+
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+
+</body>
+</html>
